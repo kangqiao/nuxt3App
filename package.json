@@ -12,7 +12,10 @@
   "devDependencies": {
     "@huntersofbook/naive-ui-nuxt": "^1.2.0",
     "@nuxtjs/tailwindcss": "^6.11.0",
+    "gray-matter": "^4.0.3",
     "nuxt": "^3.9.3",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "sass": "^1.70.0",
     "vue": "^3.4.14",
     "vue-router": "^4.2.5"

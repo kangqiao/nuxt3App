@@ -5,5 +5,13 @@
       <NButton>hello</NButton>
     </div>
     <NuxtLink to="/detail/1">detail 1</NuxtLink>
+    <div v-for="post in posts" :key="post.id">
+      <NuxtLink class="text-lg" :to="`/detail/${post.id}`">{{ post?.title ?? post.id }} </NuxtLink>
+      <p class="text-slate-500">发布于:{{ post.date }}</p>
+    </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const posts = await $fetch("/api/posts");
+</script>
