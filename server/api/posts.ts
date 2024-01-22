@@ -17,7 +17,7 @@ export default defineEventHandler((event) => {
     const matterInfo = matter(fileContents);
     const fileInfo = fs.statSync(fullPath);
 
-    console.log(`zp::: title:${JSON.stringify(matterInfo)}, date:${fileInfo.ctime}`);
+    // console.log(`zp::: title:${JSON.stringify(matterInfo)}, date:${fileInfo.ctime}`);
 
     return {
       id,

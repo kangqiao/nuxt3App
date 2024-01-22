@@ -12,5 +12,18 @@ export default defineNuxtConfig({
     },
   },
   // modules: ["@nuxtjs/tailwindcss"],
-  modules: ["@nuxtjs/tailwindcss", "@huntersofbook/naive-ui-nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@huntersofbook/naive-ui-nuxt",
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: [
+          // 自动引入 `defineStore(), storeToRefs()`
+          "defineStore",
+          "storeToRefs",
+        ],
+      },
+    ],
+  ],
 });
