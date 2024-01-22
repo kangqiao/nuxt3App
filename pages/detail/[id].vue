@@ -2,10 +2,28 @@
   <div class="p-5">
     <h1 class="text-2xl">{{ title }}</h1>
     <div v-html="content"></div>
+    <!-- 评论区 -->
+    <div class="py-2">
+      <NInput v-model:value="value" type="textarea" placeholder="输入评论" />
+      <NButton @click="onSubmit">发送</NButton>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const router = useRoute();
-const { title, content } = await $fetch(`/api/detail/${router.params.id}`);
+const route = useRoute();
+const { title, content } = await $fetch(`/api/detail/${route.params.id}`);
+// 增加评论相关逻辑，注意登录状态的获取和使用
+const value = useState("comment", () => "");
+const isLogin = useLogin();
+const router = useRouter();
+const onSubmit = () => {
+  if (isLogin.value) {
+    // 提交留言...
+    value.value = "";
+  } else {
+    // 要求登录
+    router.push("/login?callback=" + route.path);
+  }
+};
 </script>
