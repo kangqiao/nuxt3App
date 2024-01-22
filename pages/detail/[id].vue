@@ -6,5 +6,12 @@ console.log(route.params.id);
 </script>
 
 <template>
-  <div>{{ route.params.id }}</div>
+  <p>{{ route.params.id }}</p>
 </template>
+
+<style scoped lang="scss">
+p {
+  // color: $linkColor;
+  color: var(--link-color);
+}
+</style>
