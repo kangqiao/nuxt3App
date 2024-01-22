@@ -1,5 +1,5 @@
 <template>
-  <div>IndexPage</div>
+  <h1>IndexPage</h1>
   <!--跳转链接-->
-  <NuxtLink to="/detail">Detail Page</NuxtLink>
+  <NuxtLink to="/detail/1">Detail / 1</NuxtLink>
 </template>
