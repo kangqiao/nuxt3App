@@ -60,4 +60,7 @@ export default defineNuxtConfig({
       script: [],
     },
   },
+  nitro: {
+    preset: "vercel",
+  },
 });
