@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCounter } from "~/store/counter";
+// import { useCounter } from "~/store/counter";
 
 // 局部状态
 // const counterRef = ref(Math.round(Math.random() * 1000));

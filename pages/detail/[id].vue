@@ -1,5 +1,8 @@
 <template>
   <div class="p-5">
+    <Head>
+      <Title>{{ route.params.id + "zp" }}</Title>
+    </Head>
     <!-- 显示错误信息 -->
     <div v-if="error">{{ errorMsg }}</div>
     <div v-else-if="pending">加载中...</div>
@@ -16,8 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import { useUser } from "~/store/user";
+// import { useUser } from "~/store/user";
 const route = useRoute();
+// 设置为当前文章id
+// useHead({
+//   title: route.params.id as string,
+// });
 // const { title, content } = await $fetch(`/api/detail/${route.params.id}`);
 // 添加 error
 const { data, pending, error } = await useAsyncData("post", () =>

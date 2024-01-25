@@ -18,4 +18,8 @@
 <script setup lang="ts">
 // const posts = await $fetch("/api/posts");
 const { data: posts, pending, error } = await useFetch("/api/posts");
+useHead({
+  title: "文章列表",
+  meta: [{ name: "description", content: "我的描述" }],
+});
 </script>
